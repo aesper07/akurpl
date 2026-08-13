@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rajdhani:wght@600;700&display=swap');
+
+:root {
+  /* Human-Curated Aviation Palette (Matte Midnight, Cloud Cream & Golden Amber) */
+  --bg-deep: #09131d;
+  --bg-surface: #0e1d2c;
+  --bg-panel: #132435;
+  --bg-panel-hover: #192d42;
+  
+  --text-main: #f5f3ef;
+  --text-sub: #a3b3c2;
+  --text-muted: #6b7c8d;
+  
+  --accent-gold: #d97706;
+  --accent-gold-hover: #b45309;
+  --accent-blue: #2563eb;
+  --sky-soft: #38bdf8;
+  --runway-green: #10b981;
+  
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-card: #203447;
+  --border-gold: rgba(217, 119, 6, 0.4);
+  
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --font-flight: 'Rajdhani', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--bg-deep);
+  color: var(--text-main);
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Subtle Sky Background Grid - Clean & Minimal */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.04), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.05), transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+.sky-clouds {
+  display: none; /* Removed heavy floating AI cloud blur overlays for a clean, professional aesthetic */
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   HEADER / AIRLINE NAV (Matte & Professional)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9, 19, 29, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-card);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--accent-gold);
+  color: #09131d;
+  border-radius: 8px;
+  transition: background-color 0.25s ease;
+}
+
+.brand:hover .brand-mark {
+  background: var(--accent-gold-hover);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-flight);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-main);
+}
+
+.brand-sub {
+  font-family: var(--font-flight);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-menu a {
+  font-family: var(--font-flight);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-menu a span {
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+}
+
+.nav-menu a:hover {
+  color: var(--text-main);
+}
+
+.nav-cta {
+  background: var(--accent-gold);
+  color: #09131d !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.nav-cta span {
+  color: #09131d !important;
+}
+
+.nav-cta:hover {
+  background: #f59e0b !important;
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-card);
+  background: var(--bg-panel);
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-main);
+  margin: 5px 0;
+}
+
+/* ==========================================================================
+   HERO SECTION (Clean Aviation Editorial)
+   ========================================================================== */
+.hero {
+  padding: 80px 0 60px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.flight-badge {
+  padding: 4px 10px;
+  background: var(--accent-gold);
+  color: #09131d;
+  font-family: var(--font-flight);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  border-radius: 4px;
+}
+
+.eyebrow span:nth-child(2) {
+  font-family: var(--font-flight);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--text-sub);
+  font-weight: 700;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.lead {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 26px;
+  font-family: var(--font-flight);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent-gold);
+  color: #09131d;
+  border: 1px solid var(--accent-gold);
+}
+
+.btn-primary:hover {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--bg-panel);
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-sub);
+  transform: translateY(-2px);
+}
+
+.mini-stats {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mini-stats li {
+  padding: 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+}
+
+.mini-stats strong {
+  display: block;
+  font-family: var(--font-flight);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.mini-stats span {
+  font-size: 0.78rem;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   AUTHENTIC AIRLINE BOARDING PASS TICKET CARD (Clean Physical Feel)
+   ========================================================================== */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.boarding-pass {
+  position: relative;
+  width: min(100%, 410px);
+  background: #112233;
+  border: 1px solid var(--border-card);
+  border-top: 3px solid var(--accent-gold);
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: var(--card-shadow);
+}
+
+.pass-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--border-subtle);
+}
+
+.airline-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-flight);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.1em;
+}
+
+.pass-status {
+  padding: 3px 8px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid var(--runway-green);
+  color: var(--runway-green);
+  font-family: var(--font-flight);
+  font-size: 0.68rem;
+  font-weight: 700;
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+}
+
+.pass-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 18px 0;
+}
+
+.airport .code {
+  font-family: var(--font-flight);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.airport .city {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  margin-top: 4px;
+}
+
+.flight-path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100px;
+}
+
+.plane-icon {
+  font-size: 1.2rem;
+  color: var(--accent-gold);
+}
+
+.flight-path .line {
+  width: 100%;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--text-sub) 0, var(--text-sub) 4px, transparent 4px, transparent 8px);
+  margin-top: 2px;
+}
+
+.avatar-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 18px 0;
+}
+
+.avatar-glow {
+  display: none; /* Removed neon glowing ring */
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-surface);
+  border: 2px solid var(--border-card);
+  border-radius: 50%;
+  color: var(--accent-gold);
+}
+
+.pass-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px dashed var(--border-subtle);
+  border-bottom: 1px dashed var(--border-subtle);
+}
+
+.detail-item small {
+  display: block;
+  font-family: var(--font-flight);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--text-sub);
+}
+
+.detail-item strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.barcode-strip {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.barcode-lines {
+  height: 30px;
+  background: repeating-linear-gradient(
+    90deg,
+    #a3b3c2 0,
+    #a3b3c2 2px,
+    transparent 2px,
+    transparent 4px,
+    #a3b3c2 4px,
+    #a3b3c2 7px,
+    transparent 7px,
+    transparent 9px
+  );
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.barcode-num {
+  font-family: var(--font-flight);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--text-sub);
+  margin-top: 6px;
+  display: block;
+}
+
+/* ==========================================================================
+   SECTIONS & SEPARATORS
+   ========================================================================== */
+.section {
+  padding: 80px 0;
+}
+
+.muted {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-card);
+  border-bottom: 1px solid var(--border-card);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.section-tag {
+  font-family: var(--font-flight);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+}
+
+.two-col h2,
+.section-heading {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.col-body p {
+  font-size: 1.05rem;
+  color: var(--text-sub);
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   SKILLS GRID (Clean Aviation Panels)
+   ========================================================================== */
+.skills-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  padding: 24px 20px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+}
+
+.skill-card .icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+}
+
+.skill-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-flight);
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+
+.skill-card p,
+.project-body p,
+.timeline-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   PROJECTS (Flight Route Cards)
+   ========================================================================== */
+.project-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.project-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+}
+
+.project-thumb {
+  position: relative;
+  height: 200px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-card);
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.05), transparent 70%), var(--bg-surface);
+  border: 2px dashed var(--border-card);
+  padding: 16px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.placeholder-icon {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+  color: var(--accent-gold);
+}
+
+.placeholder-title {
+  font-family: var(--font-flight);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
+}
+
+.placeholder-hint {
+  font-size: 0.72rem;
+  color: var(--text-sub);
+  margin-top: 4px;
+}
+
+.placeholder-hint code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: var(--accent-gold);
+}
+
+.flight-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  background: rgba(9, 19, 29, 0.9);
+  border: 1px solid var(--border-card);
+  color: var(--accent-gold);
+  font-family: var(--font-flight);
+  font-size: 0.68rem;
+  font-weight: 700;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+  z-index: 5;
+}
+
+.project-body {
+  padding: 22px 20px;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-family: var(--font-flight);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+.project-body h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   TIMELINE (Flight Logbook)
+   ========================================================================== */
+.timeline {
+  margin-top: 40px;
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 22px 24px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-card);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(4px);
+  background: var(--bg-panel-hover);
+}
+
+.time-badge .year {
+  font-family: var(--font-flight);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.time-badge .flight-code {
+  font-family: var(--font-flight);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+}
+
+.timeline-item h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   FOOTER (Tower Control)
+   ========================================================================== */
+.site-footer {
+  padding: 80px 0 30px;
+  background: var(--bg-deep);
+  border-top: 1px solid var(--border-card);
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.footer-wrap h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  color: var(--text-main);
+}
+
+.contact-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tower-btn {
+  padding: 10px 20px;
+  font-family: var(--font-flight);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tower-btn:hover {
+  background: var(--accent-gold);
+  color: #09131d;
+  border-color: var(--accent-gold);
+}
+
+.bottom-bar {
+  padding-top: 20px;
+  font-family: var(--font-flight);
+  font-size: 0.78rem;
+  color: var(--text-sub);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-grid,
+  .two-col,
+  .footer-wrap {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: #09131d;
+    border-bottom: 1px solid var(--border-card);
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .mini-stats {
+    grid-template-columns: 1fr;
+  }
+}
