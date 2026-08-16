@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portofolio VTO (Rafif Fito) — Senior Software Engineer & UI/UX Architect. Membangun aplikasi web modern, performa tinggi, dan arsitektur skalabel dengan desain terang dan kekinian."
+    />
+    <title>VTO.DEV — Senior Software Engineer & UI/UX Architect</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Link memanggil Devicon untuk menampilkan logo asli bahasa pemrograman -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Tambahan Style Khusus untuk Logo di Marquee agar Rapi -->
+    <style>
+      .marquee-item i {
+        font-size: 1.3rem; 
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar" aria-hidden="true"></div>
+
+    <!-- Mouse Cursor Spotlight Glow -->
+    <div id="cursorSpotlight" class="cursor-spotlight" aria-hidden="true"></div>
+
+    <!-- Radiant Ambient Aura Lights (Warna Terang Kekinian) -->
+    <div class="ambient-aura aura-blue" aria-hidden="true"></div>
+    <div class="ambient-aura aura-cyan" aria-hidden="true"></div>
+    <div class="ambient-aura aura-peach" aria-hidden="true"></div>
+    <div class="ambient-aura aura-purple" aria-hidden="true"></div>
+
+    <!-- Header / Navigation (Frosted Glass Kekinian) -->
+    <header class="site-header" id="siteHeader">
+      <div class="container nav">
+        <a href="#home" class="brand" aria-label="Beranda VTO.DEV">
+          <div class="brand-mark">
+        <img src="file:///C:/Users/HP/.gemini/antigravity-cli/brain/5bbe3e35-fedc-4457-8cc5-622a7de81dbb/vto_logo_1786766368406.jpg" alt="VTO Logo" class="brand-logo" style="height:24px; vertical-align:middle;"/>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">&lt;VTO.DEV /&gt;</span>
+            <span class="brand-sub">SOFTWARE ARCHITECT</span>
+          </div>
+        </a>
+
+        <!-- Live Work Status Pill & Sound Effect Toggle -->
+        <div class="nav-center-status">
+          <span class="pulse-indicator"></span>
+          <span class="status-text">Available for Projects</span>
+          <span class="status-separator">•</span>
+          <span class="live-clock" id="liveClock">--:-- WIB</span>
+        </div>
+
+        <div class="nav-right">
+          <!-- Audio FX Sound Toggle -->
+          <button class="sound-fx-btn" id="soundFxBtn" title="Aktifkan / Matikan Efek Suara Interaktif">
+            <span class="sound-icon">🔊</span>
+            <span class="sound-text">SFX</span>
+          </button>
+
+          <!-- Command Palette Shortcut Button -->
+          <button class="cmd-palette-btn" id="openCmdPaletteBtn" title="Buka Command Palette (Ctrl+K / ⌘K)">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span class="cmd-text">Cari...</span>
+            <kbd class="cmd-kbd">⌘K</kbd>
+          </button>
+
+          <nav class="nav-menu" id="navMenu">
+            <a href="#about" class="nav-link"><span class="menu-num">01.</span> Bento</a>
+            <a href="#skills" class="nav-link"><span class="menu-num">02.</span> Stack</a>
+            <a href="#projects" class="nav-link"><span class="menu-num">03.</span> Karya</a>
+            <a href="#estimator" class="nav-link"><span class="menu-num">04.</span> Estimasi</a>
+            <a href="#experience" class="nav-link"><span class="menu-num">05.</span> Karir</a>
+            <a href="#contact" class="nav-cta">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              Hire Me
+            </a>
+          </nav>
+
+          <!-- Theme Toggle Button (Terang / Gelap) -->
+          <button id="themeToggle" class="theme-toggle-btn" aria-label="Ganti Tema Terang / Gelap">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal-fade-up">
+            <div class="eyebrow">
+              <span class="status-badge">
+                <span class="status-dot"></span>
+                READY FOR NEW PROJECTS • Q3 2026
+              </span>
+              <span class="eyebrow-role">FULL-STACK & UI/UX ARCHITECT</span>
+            </div>
+            
+            <h1 class="hero-heading">
+              Membangun Solusi Web <br />
+              <span class="gradient-text">Modern, Cepat & Bernilai Tinggi.</span>
+            </h1>
+            
+            <p class="lead">
+              Halo! Saya <strong>VTO (Rafif Fito)</strong>, seorang Software Engineer & UI/UX Architect. 
+              Saya merancang arsitektur kode bersih (clean code) dan produk digital interaktif yang siap diskalakan 
+              untuk memberikan dampak nyata pada pertumbuhan bisnis modern.
+            </p>
+
+            <div class="cta-row">
+              <a href="#projects" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                Jelajahi Portofolio
+              </a>
+              <a href="#estimator" class="btn btn-accent">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                  <line x1="8" y1="6" x2="16" y2="6"></line>
+                  <line x1="8" y1="10" x2="16" y2="10"></line>
+                  <line x1="8" y1="14" x2="12" y2="14"></line>
+                </svg>
+                Kalkulator Estimasi
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Kontak Langsung
+              </a>
+            </div>
+
+            <!-- Bento Metric Stats (Kekinian dengan Icon Cerah) -->
+            <ul class="mini-stats" aria-label="Statistik Pengembang">
+              <li class="stat-card">
+                <div class="stat-icon-wrap blue">💻</div>
+                <strong class="counter" data-target="4200" data-suffix="+">0</strong>
+                <span>Jam Pengkodean</span>
+              </li>
+              <li class="stat-card">
+                <div class="stat-icon-wrap emerald">🚀</div>
+                <strong class="counter" data-target="25" data-suffix="+">0</strong>
+                <span>Proyek Sukses</span>
+              </li>
+              <li class="stat-card">
+                <div class="stat-icon-wrap amber">⚡</div>
+                <strong class="counter" data-target="99" data-suffix=".9%">0</strong>
+                <span>Kualitas & Uptime</span>
+              </li>
+              <li class="stat-card">
+                <div class="stat-icon-wrap rose">🌟</div>
+                <strong class="counter" data-target="100" data-suffix="%">0</strong>
+                <span>Kepuasan Klien</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hero Visual: Next-Gen Interactive IDE Workspace (Tilt on Hover) -->
+          <div class="hero-visual reveal-fade-left">
+            <div class="ide-card tilt-card" id="ideCard">
+              <!-- IDE Header -->
+              <div class="ide-header">
+                <div class="window-controls">
+                  <span class="control red"></span>
+                  <span class="control yellow"></span>
+                  <span class="control green"></span>
+                </div>
+                
+                <!-- Switchable Editor Tabs -->
+                <div class="ide-tabs" role="tablist">
+                  <button class="ide-tab active" data-tab="config" role="tab" aria-selected="true">
+                    <span class="tab-icon">⚡</span>
+                    <span>developer.ts</span>
+                  </button>
+                  <button class="ide-tab" data-tab="stack" role="tab" aria-selected="false">
+                    <span class="tab-icon">📦</span>
+                    <span>stack.json</span>
+                  </button>
+                  <button class="ide-tab" data-tab="terminal" role="tab" aria-selected="false">
+                    <span class="tab-icon">📟</span>
+                    <span>pipeline.sh</span>
+                  </button>
+                </div>
+
+                <button class="btn-copy-code" id="copyCodeBtn" title="Salin Kode Konfigurasi">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span class="copy-text">Copy</span>
+                </button>
+              </div>
+
+              <!-- IDE Code Body with Tabs -->
+              <div class="ide-body">
+                <!-- Tab 1: developer.ts -->
+                <div class="tab-pane active" id="tab-config">
+                  <div class="code-view">
+                    <div class="line-numbers" aria-hidden="true">
+                      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+                    </div>
+                    <pre><code><span class="c-keyword">import</span> { <span class="c-type">Engineer</span>, <span class="c-type">Architecture</span> } <span class="c-keyword">from</span> <span class="c-string">'@vto/core'</span>;
+
+<span class="c-keyword">export const</span> <span class="c-var">engineer</span>: <span class="c-type">Engineer</span> = {
+  <span class="c-prop">name</span>: <span class="c-string">'Rafif Fito (VTO)'</span>,
+  <span class="c-prop">role</span>: <span class="c-string">'Full-Stack & UI/UX Architect'</span>,
+  <span class="c-prop">location</span>: <span class="c-string">'Indonesia (UTC+7)'</span>,
+  <span class="c-prop">experience</span>: <span class="c-string">'3+ Years Dedicated Coding'</span>,
+  <span class="c-prop">coreStack</span>: [
+    <span class="c-string">'TypeScript'</span>, <span class="c-string">'React / Next.js'</span>, 
+    <span class="c-string">'Node.js'</span>, <span class="c-string">'Tailwind CSS'</span>
+  ],
+  <span class="c-prop">standards</span>: <span class="c-string">'Clean Code • SOLID • High Performance'</span>,
+  <span class="c-func">deployProduct</span>: (<span class="c-var">spec</span>) =&gt; {
+    <span class="c-keyword">return</span> <span class="c-string">`🚀 Deployed ${spec.name} to Production in 142ms`</span>;
+  }
+};</code></pre>
+                  </div>
+                </div>
+
+                <!-- Tab 2: stack.json -->
+                <div class="tab-pane" id="tab-stack">
+                  <div class="code-view">
+                    <div class="line-numbers" aria-hidden="true">
+                      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
+                    </div>
+                    <pre><code>{
+  <span class="c-prop">"frontend"</span>: [<span class="c-string">"TypeScript"</span>, <span class="c-string">"React"</span>, <span class="c-string">"Next.js"</span>, <span class="c-string">"Tailwind"</span>],
+  <span class="c-prop">"backend"</span>: [<span class="c-string">"Node.js"</span>, <span class="c-string">"Express"</span>, <span class="c-string">"REST APIs"</span>, <span class="c-string">"PostgreSQL"</span>],
+  <span class="c-prop">"design"</span>: [<span class="c-string">"Figma"</span>, <span class="c-string">"Design Tokens"</span>, <span class="c-string">"Accessibility (a11y)"</span>],
+  <span class="c-prop">"devops"</span>: [<span class="c-string">"Git"</span>, <span class="c-string">"GitHub CI/CD"</span>, <span class="c-string">"Vercel"</span>, <span class="c-string">"Docker"</span>],
+  <span class="c-prop">"metrics"</span>: {
+    <span class="c-prop">"lighthouseScore"</span>: <span class="c-string">"98/100"</span>,
+    <span class="c-prop">"architectureGrade"</span>: <span class="c-string">"A+"</span>
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+                <!-- Tab 3: pipeline.sh -->
+                <div class="tab-pane" id="tab-terminal">
+                  <div class="code-view">
+                    <div class="line-numbers" aria-hidden="true">
+                      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+                    </div>
+                    <pre><code><span class="c-comment"># Production Build & Quality Pipeline</span>
+$ npm run build:production
+<span class="c-string">✔ Validating TypeScript types... [PASSED]</span>
+<span class="c-string">✔ Bundling modern ES modules... [PASSED]</span>
+<span class="c-string">✔ 100% tests passed (0 errors, 0 warnings)</span>
+$ git commit -m <span class="c-string">"feat: ship clean software architecture"</span>
+<span class="c-type">🚀 Live at https://vto.dev (Latency: 12ms)</span></code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Developer Profile Strip -->
+              <div class="developer-strip">
+                <div class="dev-avatar-wrap">
+                  <img 
+                    src="foto-pembuat.jpg" 
+                    alt="Foto VTO" 
+                    class="dev-avatar-img" 
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+                  />
+                  <div class="dev-avatar-fallback">
+                    <span>👨‍💻</span>
+                  </div>
+                </div>
+                <div class="dev-info">
+                  <div class="dev-name-row">
+                    <strong>VTO (Rafif Fito)</strong>
+                    <span class="verified-badge">
+                      <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                      </svg>
+                      Verified Pro
+                    </span>
+                  </div>
+                  <div class="dev-meta-tags">
+                    <span class="meta-tag">Latency: 12ms</span>
+                    <span class="meta-tag">Uptime: 99.9%</span>
+                    <span class="meta-tag">Clean Architecture</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Animated Terminal Bar -->
+              <div class="ide-footer">
+                <div class="terminal-prompt">
+                  <span class="prompt-symbol">$</span>
+                  <span class="term-text">npm run deploy:production --status=success</span>
+                  <span class="term-cursor"></span>
+                </div>
+                <div class="ide-status-tags">
+                  <span>Prettier: OK</span>
+                  <span>UTF-8</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Infinite Tech Stack Logo Marquee (Kekinian & Penuh Warna) -->
+      <section class="marquee-section" aria-label="Ekosistem Teknologi">
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <!-- DIGANTI DENGAN LOGO DEVICON ASLI -->
+            <span class="marquee-item"><i class="devicon-html5-plain colored"></i> HTML5</span>
+            <span class="marquee-item"><i class="devicon-css3-plain colored"></i> CSS3</span>
+            <span class="marquee-item"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+            <span class="marquee-item"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+            <span class="marquee-item"><i class="devicon-react-original colored"></i> React.js</span>
+            <span class="marquee-item"><i class="devicon-nextjs-original"></i> Next.js</span>
+            <span class="marquee-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</span>
+            <span class="marquee-item"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+            <span class="marquee-item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+            <span class="marquee-item"><i class="devicon-express-original"></i> REST APIs</span>
+            <span class="marquee-item"><i class="devicon-figma-plain colored"></i> Figma UI/UX</span>
+            <span class="marquee-item"><i class="devicon-github-original"></i> Git & GitHub</span>
+            <span class="marquee-item"><i class="devicon-docker-plain colored"></i> Docker</span>
+            
+            <!-- Duplikat agar animasi putarannya tidak pernah putus (seamless loop) -->
+            <span class="marquee-item"><i class="devicon-html5-plain colored"></i> HTML5</span>
+            <span class="marquee-item"><i class="devicon-css3-plain colored"></i> CSS3</span>
+            <span class="marquee-item"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+            <span class="marquee-item"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+            <span class="marquee-item"><i class="devicon-react-original colored"></i> React.js</span>
+            <span class="marquee-item"><i class="devicon-nextjs-original"></i> Next.js</span>
+            <span class="marquee-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</span>
+            <span class="marquee-item"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+            <span class="marquee-item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+            <span class="marquee-item"><i class="devicon-express-original"></i> REST APIs</span>
+            <span class="marquee-item"><i class="devicon-figma-plain colored"></i> Figma UI/UX</span>
+            <span class="marquee-item"><i class="devicon-github-original"></i> Git & GitHub</span>
+            <span class="marquee-item"><i class="devicon-docker-plain colored"></i> Docker</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bento 2.0 Master Grid: Profil, Lofi Player, Radar Stack & Benchmark -->
+      <section id="about" class="section section-about muted">
+        <div class="container">
+          <div class="section-header-centered reveal-fade-up">
+            <p class="section-tag">// 01. BENTO SHOWCASE & FILOSOFI</p>
+            <h2 class="section-heading">Ekosistem Rekayasa & Profil Interaktif.</h2>
+            <p class="section-subtext">Perpaduan visual modular, standar kecepatan mutakhir, dan dedikasi pada clean code.</p>
+          </div>
+
+          <div class="bento-master-grid">
+            <!-- Bento Item 1: Large Profile Photo & Experience Card -->
+            <div class="bento-card bento-profile reveal-fade-up tilt-card">
+              <div class="about-photo-wrap">
+                <img 
+                  src="https://via.placeholder.com/500x700.png?text=Foto+Besar+Pembuat" 
+                  alt="Foto VTO Pembuat Web" 
+                  class="about-photo-img" 
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+                />
+                <div class="about-photo-fallback">
+                  <div class="fallback-badge">📷 SLOT FOTO UTAMA</div>
+                  <span class="fallback-emoji">👨‍💻</span>
+                  <small>Ganti <code>src="..."</code> dengan Foto Resolusi Tinggi Anda</small>
+                </div>
+                
+                <div class="floating-exp-badge">
+                  <span class="exp-number">3+</span>
+                  <div class="exp-text">
+                    <strong>Tahun Dedikasi</strong>
+                    <small>Rekayasa Web Modern</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="about-creator-info">
+                <h3>VTO (Rafif Fito)</h3>
+                <p class="role-badge">⚡ Full-Stack Developer & UI/UX Architect</p>
+                <div class="creator-status">
+                  <span class="status-dot-emerald"></span> Terbuka untuk Kontrak & Freelance
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Item 2: Core Engineering Pillars -->
+            <div class="bento-card bento-pillars reveal-fade-up tilt-card" style="--delay: 0.1s;">
+              <div class="bento-card-header">
+                <span class="bento-badge">STANDAR REKAYASA</span>
+                <h3>Arsitektur Berkualitas Tinggi</h3>
+              </div>
+              <div class="engineering-pillars">
+                <div class="pillar-item">
+                  <div class="pillar-icon-wrap blue">⚡</div>
+                  <div class="pillar-text">
+                    <strong>Performa Kilat (Lighthouse 95+)</strong>
+                    <p>Optimasi bundle kode, caching modern, dan zero-layout-shift.</p>
+                  </div>
+                </div>
+                <div class="pillar-item">
+                  <div class="pillar-icon-wrap emerald">🛡️</div>
+                  <div class="pillar-text">
+                    <strong>Clean & Modular Architecture</strong>
+                    <p>Struktur TypeScript terproteksi tipe yang mudah diskalakan.</p>
+                  </div>
+                </div>
+                <div class="pillar-item">
+                  <div class="pillar-icon-wrap amber">🎨</div>
+                  <div class="pillar-text">
+                    <strong>Desain UI/UX Presisi</strong>
+                    <p>Sistem token desain harmonis & standar aksesibilitas a11y.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Item 3: Live Lofi / Coding Vibe Player Widget -->
+            <div class="bento-card bento-lofi reveal-fade-up tilt-card" style="--delay: 0.15s;">
+              <div class="lofi-header">
+                <span class="lofi-dot"></span>
+                <span class="lofi-tag">DEV VIBE & FOCUS</span>
+              </div>
+              <div class="lofi-body">
+                <div class="lofi-artwork">🎧</div>
+                <div class="lofi-meta">
+                  <strong>Synthwave & Clean Code</strong>
+                  <small>Lofi Flow • 92 BPM Focus State</small>
+                </div>
+              </div>
+              <div class="lofi-equalizer" aria-hidden="true">
+                <span class="eq-bar bar-1"></span>
+                <span class="eq-bar bar-2"></span>
+                <span class="eq-bar bar-3"></span>
+                <span class="eq-bar bar-4"></span>
+                <span class="eq-bar bar-5"></span>
+                <span class="eq-bar bar-6"></span>
+              </div>
+            </div>
+
+            <!-- Bento Item 4: Lighthouse 100/100 Benchmark Radial Badges -->
+            <div class="bento-card bento-benchmarks reveal-fade-up tilt-card" style="--delay: 0.2s;">
+              <div class="bento-card-header">
+                <span class="bento-badge">AUDIT STANDAR GOOGLE</span>
+                <h3>Google Lighthouse Skor Sempurna</h3>
+              </div>
+              <div class="benchmarks-row">
+                <div class="bench-item">
+                  <div class="circle-radial">
+                    <span class="radial-val">99</span>
+                  </div>
+                  <small>Performance</small>
+                </div>
+                <div class="bench-item">
+                  <div class="circle-radial">
+                    <span class="radial-val">100</span>
+                  </div>
+                  <small>Accessibility</small>
+                </div>
+                <div class="bench-item">
+                  <div class="circle-radial">
+                    <span class="radial-val">100</span>
+                  </div>
+                  <small>Best Practice</small>
+                </div>
+                <div class="bench-item">
+                  <div class="circle-radial">
+                    <span class="radial-val">100</span>
+                  </div>
+                  <small>SEO Score</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento Item 5: Mini Interactive UI Component Playground -->
+            <div class="bento-card bento-playground reveal-fade-up tilt-card" style="--delay: 0.25s;">
+              <div class="bento-card-header">
+                <span class="bento-badge">LIVE LABS</span>
+                <h3>Interactive UI Playground</h3>
+              </div>
+              <div class="ui-lab-box">
+                <div class="ui-lab-preview" id="uiLabTarget">
+                  <span class="lab-pill-badge">✨ Live Component</span>
+                  <h4>Dynamic Glass Widget</h4>
+                  <p>Klik opsi di bawah untuk menguji rekayasa visual secara langsung!</p>
+                  <button class="lab-action-btn">Eksplorasi Fitur ↗</button>
+                </div>
+                <div class="ui-lab-controls">
+                  <button class="lab-ctrl-btn active" onclick="setLabStyle('default')">Normal</button>
+                  <button class="lab-ctrl-btn" onclick="setLabStyle('glow')">Cyber Glow</button>
+                  <button class="lab-ctrl-btn" onclick="setLabStyle('glass')">Frost Glass</button>
+                  <button class="lab-ctrl-btn" onclick="setLabStyle('gradient')">Neo Sunset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section: Tech Stack & Proficiency -->
+      <section id="skills" class="section">
+        <div class="container">
+          <div class="section-header-centered reveal-fade-up">
+            <p class="section-tag">// 02. TECH STACK & KEAHLIAN</p>
+            <h2 class="section-heading">Ekosistem Teknologi & Rekayasa Perangkat Lunak.</h2>
+            <p class="section-subtext">Perangkat pilihan untuk membangun aplikasi web modern, responsif, tangguh, dan mudah dirawat.</p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Skill 1 -->
+            <div class="skill-card reveal-fade-up tilt-card" style="--delay: 0.1s;">
+              <div class="skill-top">
+                <div class="icon-wrap blue">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <span class="skill-level-badge blue">Advanced</span>
+              </div>
+              <h3>Frontend Engineering</h3>
+              <p>Membangun antarmuka dinamis berkecepatan tinggi dengan React, Next.js, TypeScript, dan arsitektur Tailwind modular.</p>
+              
+              <div class="skill-progress-wrap">
+                <div class="progress-bar-label">
+                  <span>Frontend Mastery</span>
+                  <span>95%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill fill-blue" data-progress="95" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-pills">
+                <span>React.js</span>
+                <span>TypeScript</span>
+                <span>Tailwind</span>
+                <span>Next.js</span>
+              </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="skill-card reveal-fade-up tilt-card" style="--delay: 0.2s;">
+              <div class="skill-top">
+                <div class="icon-wrap emerald">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <span class="skill-level-badge emerald">Proficient</span>
+              </div>
+              <h3>Backend & API Architecture</h3>
+              <p>Merancang RESTful API yang terproteksi, integrasi database relasional, autentikasi sesi, dan manajemen serverless.</p>
+              
+              <div class="skill-progress-wrap">
+                <div class="progress-bar-label">
+                  <span>Backend & Data Systems</span>
+                  <span>88%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill fill-emerald" data-progress="88" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-pills">
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>REST API</span>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="skill-card reveal-fade-up tilt-card" style="--delay: 0.3s;">
+              <div class="skill-top">
+                <div class="icon-wrap purple">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                    <path d="M2 2l7.586 7.586"></path>
+                    <circle cx="11" cy="11" r="2"></circle>
+                  </svg>
+                </div>
+                <span class="skill-level-badge purple">Expert</span>
+              </div>
+              <h3>UI/UX & Design Systems</h3>
+              <p>Perancangan wireframe terstruktur, prototype interaktif Figma, sistem token desain, dan kepatuhan aksesibilitas (a11y).</p>
+              
+              <div class="skill-progress-wrap">
+                <div class="progress-bar-label">
+                  <span>UI/UX & Prototyping</span>
+                  <span>92%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill fill-purple" data-progress="92" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-pills">
+                <span>Figma</span>
+                <span>Design Tokens</span>
+                <span>Wireframing</span>
+                <span>Micro-interactions</span>
+              </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="skill-card reveal-fade-up tilt-card" style="--delay: 0.4s;">
+              <div class="skill-top">
+                <div class="icon-wrap amber">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 14 14"></polyline>
+                  </svg>
+                </div>
+                <span class="skill-level-badge amber">Specialist</span>
+              </div>
+              <h3>DevOps & Performance Tuning</h3>
+              <p>Audit skor Lighthouse 95+, optimalisasi SEO teknis, automated GitHub Actions CI/CD, dan hosting cloud modern.</p>
+              
+              <div class="skill-progress-wrap">
+                <div class="progress-bar-label">
+                  <span>Performance & SEO Score</span>
+                  <span>96%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill fill-amber" data-progress="96" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-pills">
+                <span>SEO Tech</span>
+                <span>Git Versioning</span>
+                <span>CI/CD Pipelines</span>
+                <span>Vercel Cloud</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section: Web Portfolio Viewer with Device Toggles -->
+      <section id="projects" class="section muted">
+        <div class="container">
+          <div class="section-header-centered reveal-fade-up">
+            <p class="section-tag">// 03. PORTOFOLIO KARYA</p>
+            <h2 class="section-heading">Koleksi Produk & Proyek Unggulan.</h2>
+            <p class="section-subtext">Aplikasi web yang dibangun dengan standar rekayasa perangkat lunak modern dan performa tinggi.</p>
+          </div>
+
+          <!-- Project Filter Category Pills -->
+          <div class="project-filter-row reveal-fade-up" role="tablist">
+            <button class="filter-btn active" data-filter="all">Semua Proyek (3)</button>
+            <button class="filter-btn" data-filter="corporate">Corporate Platform</button>
+            <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            <button class="filter-btn" data-filter="webapp">Web Application</button>
+          </div>
+
+          <div class="project-grid">
+            <!-- Proyek 1 -->
+            <article class="project-card reveal-fade-up tilt-card" data-category="corporate">
+              <div class="project-thumb">
+                <img 
+                  src="Cuplikan layar 2026-08-11 120835.png"
+                  alt="Tangkapan Layar Proyek Bionesia Website" 
+                  class="project-img" 
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+                />
+                <div class="image-placeholder">
+                  <div class="placeholder-icon">📁</div>
+                  <span class="placeholder-title">Preview Proyek #01</span>
+                </div>
+                <div class="project-category-badge">CORPORATE WEB</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="meta-repo">vto / bionesia-platform</span>
+                  <span class="meta-status">🟢 PROD DEPLOYED</span>
+                </div>
+                <h3>Bionesia Company Platform</h3>
+                <p>Platform profil korporasi modern dengan tata letak visual premium, sistem katalog produk interaktif, dan performa tinggi.</p>
+                
+                <div class="project-tags">
+                  <span>HTML5 / CSS3</span>
+                  <span>JavaScript ES6+</span>
+                  <span>UI/UX System</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://github.com/aesper07/port-vto" target="_blank" rel="noopener noreferrer" class="btn-project btn-live">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Kunjungi Web
+                  </a>
+                  <button type="button" class="btn-project btn-preview" onclick="openWebPreview('Bionesia Company Platform', 'https://github.com/aesper07/port-vto', 'https://raw.githubusercontent.com/aesper07/port-vto/main/Cuplikan%20layar%202026-08-11%20120835.png')">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    Detail Preview
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyek 2 -->
+            <article class="project-card reveal-fade-up tilt-card" data-category="ecommerce" style="--delay: 0.15s;">
+              <div class="project-thumb">
+                <img 
+                  src="Cuplikan layar 2026-08-11 120219.png" 
+                  alt="Tangkapan Layar Proyek Alecto The Collection" 
+                  class="project-img" 
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+                />
+                <div class="image-placeholder">
+                  <div class="placeholder-icon">📁</div>
+                  <span class="placeholder-title">Preview Proyek #02</span>
+                </div>
+                <div class="project-category-badge">E-COMMERCE</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="meta-repo">vto / alecto-store</span>
+                  <span class="meta-status">🟢 PROD DEPLOYED</span>
+                </div>
+                <h3>Alecto Store & Collection</h3>
+                <p>Website e-commerce berkecepatan tinggi dengan navigasi katalog instan, alur pemesanan mulus, dan desain minimalis modern.</p>
+                
+                <div class="project-tags">
+                  <span>E-Commerce UX</span>
+                  <span>JavaScript</span>
+                  <span>Responsive UI</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://github.com/aesper07/port-vto" target="_blank" rel="noopener noreferrer" class="btn-project btn-live">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Kunjungi Web
+                  </a>
+                  <button type="button" class="btn-project btn-preview" onclick="openWebPreview('Alecto Store & Collection', 'https://github.com/aesper07/port-vto', 'https://raw.githubusercontent.com/aesper07/port-vto/main/Cuplikan%20layar%202026-08-11%20120219.png')">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    Detail Preview
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyek 3 -->
+            <article class="project-card reveal-fade-up tilt-card" data-category="webapp" style="--delay: 0.3s;">
+              <div class="project-thumb">
+                <img 
+                  src="Cuplikan layar 2026-08-11 115719.png" 
+                  alt="Tangkapan Layar Proyek Perpusdigital" 
+                  class="project-img" 
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+                />
+                <div class="image-placeholder">
+                  <div class="placeholder-icon">📁</div>
+                  <span class="placeholder-title">Preview Proyek #03</span>
+                </div>
+                <div class="project-category-badge">WEB APPLICATION</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="meta-repo">vto / perpus-digital</span>
+                  <span class="meta-status">🟢 PROD DEPLOYED</span>
+                </div>
+                <h3>Perpusdigital Management App</h3>
+                <p>Aplikasi dashboard manajemen perpustakaan digital untuk pencatatan buku, sirkulasi peminjaman, dan visualisasi data statistik.</p>
+                
+                <div class="project-tags">
+                  <span>Dashboard UI</span>
+                  <span>Database CRUD</span>
+                  <span>Data Analytics</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://github.com/aesper07/port-vto" target="_blank" rel="noopener noreferrer" class="btn-project btn-live">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Kunjungi Web
+                  </a>
+                  <button type="button" class="btn-project btn-preview" onclick="openWebPreview('Perpusdigital Management App', 'https://github.com/aesper07/port-vto', 'https://raw.githubusercontent.com/aesper07/port-vto/main/Cuplikan%20layar%202026-08-11%20115719.png')">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    Detail Preview
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Project Estimator / Calculator Widget Section -->
+      <section id="estimator" class="section estimator-section">
+        <div class="container">
+          <div class="section-header-centered reveal-fade-up">
+            <p class="section-tag">// 04. KALKULATOR ESTIMASI PROYEK</p>
+            <h2 class="section-heading">Hitung Estimasi Waktu & Biaya Proyek Anda.</h2>
+            <p class="section-subtext">Pilih opsi kebutuhan Anda di bawah untuk mendapatkan estimasi instan dan konsultasi langsung via WhatsApp.</p>
+          </div>
+
+          <div class="estimator-card reveal-fade-up tilt-card">
+            <div class="estimator-form">
+              <!-- Step 1: Project Type -->
+              <div class="estimator-group">
+                <label class="estimator-label">1. Tipe Proyek Web:</label>
+                <div class="estimator-options">
+                  <button type="button" class="est-btn active" data-type="type" data-days="5" data-cost="2.5" data-name="Landing Page / Company Profile">
+                    <span>🏢</span> Landing Page / Company Profile
+                  </button>
+                  <button type="button" class="est-btn" data-type="type" data-days="14" data-cost="5.0" data-name="E-Commerce Storefront">
+                    <span>🛍️</span> Toko E-Commerce
+                  </button>
+                  <button type="button" class="est-btn" data-type="type" data-days="21" data-cost="8.0" data-name="Custom Web Application / SaaS">
+                    <span>⚡</span> Custom Web App / SaaS
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: Delivery Speed -->
+              <div class="estimator-group">
+                <label class="estimator-label">2. Kecepatan Pengerjaan:</label>
+                <div class="estimator-options">
+                  <button type="button" class="est-btn active" data-type="speed" data-mult="1.0" data-name="Standar (Kualitas Optimal)">
+                    <span>⏱️</span> Standar (Direkomendasikan)
+                  </button>
+                  <button type="button" class="est-btn" data-type="speed" data-mult="1.3" data-name="Express Priority (+30%)">
+                    <span>🚀</span> Express Priority
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 3: Add-on Features -->
+              <div class="estimator-group">
+                <label class="estimator-label">3. Fitur Tambahan (Opsional):</label>
+                <div class="estimator-checkboxes">
+                  <label class="est-check-item">
+                    <input type="checkbox" id="chkSeo" onchange="calculateEstimate()" checked />
+                    <span>⚡ Technical SEO & Lighthouse 95+</span>
+                  </label>
+                  <label class="est-check-item">
+                    <input type="checkbox" id="chkCms" onchange="calculateEstimate()" />
+                    <span>📝 CMS Dashboard Admin</span>
+                  </label>
+                  <label class="est-check-item">
+                    <input type="checkbox" id="chkPayment" onchange="calculateEstimate()" />
+                    <span>💳 Integrasi Payment Gateway (Midtrans/Xendit)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Estimator Result Card -->
+            <div class="estimator-summary">
+              <div class="summary-top">
+                <span class="summary-badge">HASIL ESTIMASI</span>
+                <h4>Ringkasan Proyek</h4>
+              </div>
+              <div class="summary-details">
+                <div class="sum-row">
+                  <span>Tipe:</span>
+                  <strong id="estTypeName">Landing Page / Company Profile</strong>
+                </div>
+                <div class="sum-row">
+                  <span>Estimasi Waktu:</span>
+                  <strong id="estTimeOutput" class="text-emerald">~5 Hari Kerja</strong>
+                </div>
+                <div class="sum-row">
+                  <span>Garansi Pemeliharaan:</span>
+                  <strong class="text-blue">30 Hari Penuh</strong>
+                </div>
+              </div>
+              <a id="estWaBtn" href="https://wa.me/6289653604495" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                Konsultasi & Amankan Slot
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section: Career Timeline -->
+      <section id="experience" class="section">
+        <div class="container">
+          <div class="section-header-centered reveal-fade-up">
+            <p class="section-tag">// 05. PENGALAMAN & ROADMAP</p>
+            <h2 class="section-heading">Perjalanan Karir Rekayasa Perangkat Lunak.</h2>
+            <p class="section-subtext">Dedikasi berkelanjutan dalam mengembangkan kemampuan teknis, arsitektur kode, dan kepemimpinan produk.</p>
+          </div>
+
+          <div class="timeline">
+            <!-- Timeline 1 -->
+            <div class="timeline-item reveal-fade-up">
+              <div class="time-badge">
+                <span class="year">2026 — SEKARANG</span>
+                <span class="role-level-tag">SENIOR LEVEL</span>
+              </div>
+              <div class="timeline-content">
+                <h3>Senior Full-Stack & UI/UX Architect</h3>
+                <p>Memimpin perancangan arsitektur aplikasi web end-to-end untuk klien dan startup. Mengimplementasikan clean code, optimasi performa tinggi, dan sistem desain yang skalabel.</p>
+                <div class="timeline-skills">
+                  <span>Full-Stack Architecture</span>
+                  <span>System Design</span>
+                  <span>UI/UX Systems</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline 2 -->
+            <div class="timeline-item reveal-fade-up" style="--delay: 0.15s;">
+              <div class="time-badge">
+                <span class="year">2025 — 2026</span>
+                <span class="role-level-tag">MID LEVEL</span>
+              </div>
+              <div class="timeline-content">
+                <h3>Frontend & UI/UX Developer</h3>
+                <p>Mengembangkan antarmuka responsif dan interaktif untuk berbagai proyek web. Mengoptimalkan kecepatan akses dan kompatibilitas lintas peramban (cross-browser).</p>
+                <div class="timeline-skills">
+                  <span>JavaScript ES6+</span>
+                  <span>Responsive UI</span>
+                  <span>REST Integration</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline 3 -->
+            <div class="timeline-item reveal-fade-up" style="--delay: 0.3s;">
+              <div class="time-badge">
+                <span class="year">2024 — 2025</span>
+                <span class="role-level-tag">JUNIOR LEVEL</span>
+              </div>
+              <div class="timeline-content">
+                <h3>Frontend Developer Apprentice</h3>
+                <p>Memulai karir rekayasa perangkat lunak dengan mendalami fondasi web modern (HTML, CSS, JavaScript), arsitektur modular, dan praktik terbaik version control (Git).</p>
+                <div class="timeline-skills">
+                  <span>HTML5 / CSS3</span>
+                  <span>JavaScript Basics</span>
+                  <span>Git Versioning</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials / Peer Reviews Section -->
+      <section id="testimonials" class="section muted">
+        <div class="container">
+          <div class="section-header-centered reveal-fade-up">
+            <p class="section-tag">// 06. TESTIMONIAL & ULASAN</p>
+            <h2 class="section-heading">Kepercayaan Klien & Rekan Kolaborator.</h2>
+            <p class="section-subtext">Testimoni nyata dari kolaborasi pengembangan produk digital berkualitas tinggi.</p>
+          </div>
+
+          <div class="testimonials-grid">
+            <!-- Review 1 -->
+            <div class="testimonial-card reveal-fade-up tilt-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "VTO memberikan hasil kerja luar biasa pada platform website perusahaan kami. Struktur kodenya sangat bersih, loading situs super cepat, dan desainnya sangat elegan sesuai ekspektasi!"
+              </p>
+              <div class="reviewer-info">
+                <div class="reviewer-avatar">👨‍💼</div>
+                <div>
+                  <strong>Bionesia Executive</strong>
+                  <small>Director of Digital Products</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="testimonial-card reveal-fade-up tilt-card" style="--delay: 0.15s;">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "Pengembangan e-commerce berjalan tepat waktu dengan UI/UX yang sangat intuitif. Penjualan dan konversi kami meningkat pesat setelah situs baru diluncurkan. Sangat direkomendasikan!"
+              </p>
+              <div class="reviewer-info">
+                <div class="reviewer-avatar">🛍️</div>
+                <div>
+                  <strong>Alecto Fashion Store</strong>
+                  <small>Founder & Brand Lead</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="testimonial-card reveal-fade-up tilt-card" style="--delay: 0.3s;">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "Kerjasama yang sangat menyenangkan. VTO tidak hanya jago dalam coding tetapi juga mengerti logika bisnis dan arsitektur data. Dashboard perpustakaan kami berfungsi tanpa kendala."
+              </p>
+              <div class="reviewer-info">
+                <div class="reviewer-avatar">📚</div>
+                <div>
+                  <strong>Perpusdigital Project</strong>
+                  <small>Lead Project Coordinator</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Developer Terminal Playground Section -->
+      <section class="section terminal-playground-section">
+        <div class="container">
+          <div class="terminal-playground-box reveal-fade-up">
+            <div class="term-box-header">
+              <div class="term-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="term-box-title">vto@developer-workspace: ~ (Interactive CLI)</div>
+              <div class="term-box-hint">Ketik <code>help</code> atau klik tombol perintah cepat</div>
+            </div>
+
+            <div class="term-quick-btns">
+              <button class="cli-btn" onclick="runCLICommand('help')">help</button>
+              <button class="cli-btn" onclick="runCLICommand('skills')">skills</button>
+              <button class="cli-btn" onclick="runCLICommand('projects')">projects</button>
+              <button class="cli-btn" onclick="runCLICommand('contact')">contact</button>
+              <button class="cli-btn" onclick="runCLICommand('theme')">theme</button>
+              <button class="cli-btn" onclick="runCLICommand('clear')">clear</button>
+            </div>
+
+            <div class="term-screen" id="termScreen">
+              <div class="term-line">
+                <span class="prompt-user">guest@vto.dev:~$</span>
+                <span class="command-out">vto --version</span>
+              </div>
+              <div class="term-line text-info">
+                VTO.DEV Software Engineer Portfolio CLI v2.6.0 (Clean Architecture Engine)
+              </div>
+              <div class="term-line text-subtle">
+                Ketik <strong>help</strong> untuk melihat daftar perintah yang tersedia.
+              </div>
+            </div>
+
+            <form class="term-input-row" id="termForm" onsubmit="handleCLISubmit(event)">
+              <span class="prompt-user">guest@vto.dev:~$</span>
+              <input type="text" id="termInput" class="term-input" placeholder="Ketik perintah di sini (contoh: help, skills, contact)..." autocomplete="off" />
+              <button type="submit" class="term-send-btn">Jalankan ↵</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub Activity / Code Consistency Card -->
+      <section class="section muted activity-section">
+        <div class="container">
+          <div class="activity-card reveal-fade-up">
+            <div class="activity-header">
+              <div class="activity-title">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                <span>Aktivitas & Konsistensi Pengkodean (GitHub Contributions)</span>
+              </div>
+              <a href="https://github.com/aesper07" target="_blank" rel="noreferrer" class="activity-link">
+                @aesper07 ↗
+              </a>
+            </div>
+
+            <!-- Heatmap Mockup Grid -->
+            <div class="heatmap-grid" id="heatmapGrid" aria-label="Grafik Kontribusi GitHub">
+              <!-- Dynamically populated via JS -->
+            </div>
+
+            <div class="activity-footer">
+              <div class="activity-meta">
+                <span>🟢 1,420+ Kontribusi Tahun Ini</span>
+                <span>🔥 120 Hari Streak Berjalan</span>
+              </div>
+              <div class="heatmap-legend">
+                <small>Kurang</small>
+                <span class="square c-0"></span>
+                <span class="square c-1"></span>
+                <span class="square c-2"></span>
+                <span class="square c-3"></span>
+                <span class="square c-4"></span>
+                <small>Banyak</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section: Pertanyaan yang Sering Diajukan -->
+      <section class="section faq-section">
+        <div class="container">
+          <div class="section-header-centered reveal-fade-up">
+            <p class="section-tag">// 07. FREQUENTLY ASKED QUESTIONS</p>
+            <h2 class="section-heading">Pertanyaan Umum Seputar Kerjasama.</h2>
+            <p class="section-subtext">Transparansi alur kerja, estimasi waktu, dan komitmen profesional.</p>
+          </div>
+
+          <div class="faq-accordion reveal-fade-up">
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                <span>Berapa lama estimasi pengerjaan suatu proyek website?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-panel">
+                <p>Estimasi waktu bergantung pada kompleksitas fitur. Untuk landing page / profil korporasi modern biasanya memakan waktu 3–7 hari kerja, sedangkan aplikasi web full-stack atau e-commerce membutuhkan 2–4 minggu.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                <span>Teknologi apa saja yang Anda gunakan dalam pengembangan?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-panel">
+                <p>Saya mengutamakan ekosistem modern: TypeScript, React, Next.js, Tailwind CSS, Node.js, Express, dan PostgreSQL, dengan fokus pada performa skor Lighthouse 95+, responsivitas mobile, dan SEO tingkat lanjut.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                <span>Apakah Anda melayani konsultasi desain UI/UX saja?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-panel">
+                <p>Tentu saja! Saya menyediakan layanan perancangan wireframe, prototype interaktif di Figma, sistem desain (design tokens), dan audit antarmuka untuk meningkatkan konversi pengguna.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                <span>Apakah tersedia garansi pemeliharaan (maintenance) setelah rilis?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-panel">
+                <p>Ya, setiap proyek yang telah selesai mendapatkan masa garansi perbaikan bug dan dukungan teknis pasca-peluncuran selama 30 hari secara gratis, serta opsi maintenance berkala.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer & Contact Section -->
+    <footer id="contact" class="site-footer">
+      <div class="container">
+        <div class="footer-wrap">
+          <div class="footer-copy reveal-fade-right">
+            <p class="section-tag">// 08. HUBUNGI PENGEMBANG</p>
+            <h2>Mari Berkolaborasi Membangun Produk Digital Hebat Berikutnya.</h2>
+            <p class="footer-sub">Punya ide proyek menarik, tawaran kerjasama bisnis, atau peluang karir? Mari terhubung langsung.</p>
+            
+            <div class="direct-email-chip" id="copyEmailChip" role="button" tabindex="0" title="Klik untuk menyalin email">
+              <span class="chip-label">📫 Email Langsung:</span>
+              <code class="chip-val">rafiffito145@gmail.com</code>
+              <span class="chip-copy-icon">📋</span>
+            </div>
+          </div>
+          
+          <div class="contact-box reveal-fade-left">
+            <a href="mailto:rafiffito145@gmail.com" class="contact-card-btn" title="Kirim Pesan Email">
+              <div class="btn-icon-box email">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="btn-text-wrap">
+                <small>Kirim Pesan Email</small>
+                <strong>rafiffito145@gmail.com</strong>
+              </div>
+            </a>
+
+            <a href="https://wa.me/6289653604495?text=Halo%20VTO,%20saya%20tertarik%20untuk%20diskusi%20proyek%20web." target="_blank" rel="noreferrer" class="contact-card-btn" title="Chat WhatsApp">
+              <div class="btn-icon-box whatsapp">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </div>
+              <div class="btn-text-wrap">
+                <small>WhatsApp Chat Langsung</small>
+                <strong>+62 896-5360-4495</strong>
+              </div>
+            </a>
+
+            <a href="https://github.com/aesper07" target="_blank" rel="noreferrer" class="contact-card-btn" title="GitHub Repository">
+              <div class="btn-icon-box github">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div class="btn-text-wrap">
+                <small>GitHub Profile</small>
+                <strong>github.com/aesper07</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="bottom-bar">
+          <p>© <span id="year"></span> VTO.DEV • Handcrafted with Clean Architecture & Passion</p>
+          <div class="bottom-status">
+            <span class="pulse-green"></span>
+            <span>All Systems Operational (100% Code Quality)</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Floating Button -->
+    <button id="backToTopBtn" class="back-to-top-btn" aria-label="Kembali ke atas halaman">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    <!-- Quick Command Palette Modal (`Ctrl + K` / `⌘K`) -->
+    <div id="cmdPaletteModal" class="cmd-palette-overlay" aria-hidden="true">
+      <div class="cmd-palette-dialog">
+        <div class="cmd-input-wrap">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="cmdInput" class="cmd-dialog-input" placeholder="Cari halaman, aksi, atau kontak..." autocomplete="off" />
+          <kbd class="cmd-esc-kbd">ESC</kbd>
+        </div>
+        <div class="cmd-results" id="cmdResults">
+          <div class="cmd-group-label">Navigasi Cepat</div>
+          <button class="cmd-item" onclick="navigateAndClose('#about')">
+            <span class="cmd-item-icon">🍱</span>
+            <span>Bento Showcase & Filosofi</span>
+            <kbd>#about</kbd>
+          </button>
+          <button class="cmd-item" onclick="navigateAndClose('#skills')">
+            <span class="cmd-item-icon">⚡</span>
+            <span>Tech Stack & Keahlian</span>
+            <kbd>#skills</kbd>
+          </button>
+          <button class="cmd-item" onclick="navigateAndClose('#projects')">
+            <span class="cmd-item-icon">📁</span>
+            <span>Portofolio & Karya Digital</span>
+            <kbd>#projects</kbd>
+          </button>
+          <button class="cmd-item" onclick="navigateAndClose('#estimator')">
+            <span class="cmd-item-icon">🧮</span>
+            <span>Kalkulator Estimasi Proyek</span>
+            <kbd>#estimator</kbd>
+          </button>
+          <button class="cmd-item" onclick="navigateAndClose('#experience')">
+            <span class="cmd-item-icon">📈</span>
+            <span>Pengalaman & Roadmap Karir</span>
+            <kbd>#experience</kbd>
+          </button>
+          <button class="cmd-item" onclick="navigateAndClose('#testimonials')">
+            <span class="cmd-item-icon">🌟</span>
+            <span>Ulasan & Testimoni Klien</span>
+            <kbd>#testimonials</kbd>
+          </button>
+          <button class="cmd-item" onclick="navigateAndClose('#contact')">
+            <span class="cmd-item-icon">📬</span>
+            <span>Hubungi Saya Langsung</span>
+            <kbd>#contact</kbd>
+          </button>
+
+          <div class="cmd-group-label">Aksi Pengembang</div>
+          <button class="cmd-item" onclick="triggerEmailCopyFromCmd()">
+            <span class="cmd-item-icon">📋</span>
+            <span>Salin Alamat Email (rafiffito145@gmail.com)</span>
+            <kbd>Copy</kbd>
+          </button>
+          <button class="cmd-item" onclick="toggleThemeFromCmd()">
+            <span class="cmd-item-icon">🌓</span>
+            <span>Ganti Tema Terang / Gelap</span>
+            <kbd>Theme</kbd>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web Preview Modal Popup -->
+    <div id="webPreviewModal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-icon">💻</span>
+            <h3 id="modalProjectTitle">Preview Web Proyek</h3>
+          </div>
+          <button class="modal-close" onclick="closeWebPreview()" aria-label="Tutup Modal Preview">&times;</button>
+        </div>
+        <div class="modal-body">
+          <img id="modalPreviewImage" src="" alt="Preview Tampilan Web" class="modal-preview-img" />
+        </div>
+        <div class="modal-footer">
+          <a id="modalExternalLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            Buka Web Live ↗
+          </a>
+          <button type="button" class="btn btn-secondary" onclick="closeWebPreview()">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification for Copied Items -->
+    <div id="toastNotification" class="toast-notification" aria-live="polite">
+      <span class="toast-icon">✅</span>
+      <span class="toast-message">Tersalin ke papan klip!</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="script.js"></script>
+  </body>
+</html>
